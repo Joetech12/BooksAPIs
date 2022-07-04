@@ -6,7 +6,7 @@ const bookRoutes = require('./routes/Books');
 // express app
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 // middleware
 app.use(express.json());
@@ -25,7 +25,7 @@ mongoose
   .connect(process.env.MONG_URI)
   .then(() => {
     // listen for requests
-    app.listen(PORT, () => {
+    app.listen(PORT || 5000, () => {
       console.log(`Connected to db & listening on port ${PORT}`);
     });
   })
