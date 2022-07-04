@@ -6,7 +6,7 @@ const bookRoutes = require('./routes/Books');
 // express app
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = 4000;
 
 // middleware
 app.use(express.json());
